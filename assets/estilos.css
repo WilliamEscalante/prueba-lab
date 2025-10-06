@@ -1,0 +1,569 @@
+/* Reset y Fuentes Premium */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Admin Header */
+.admin-header {
+    background: linear-gradient(135deg, #003366, #004488);
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px; /* Ajusta según tu logo */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #003366;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+/* Stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.02);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+.stat-label {
+    color: #6b7280;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Search Box */
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #FFA500;
+}
+
+/* Doctors Grid */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Doctor Card */
+.doctor-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.doctor-header {
+    background: linear-gradient(135deg, #003366, #004488);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.doctor-initials {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 15px;
+    border: 3px solid white;
+}
+
+.doctor-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.doctor-specialty {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.doctor-info {
+    padding: 20px;
+}
+
+.info-row {
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #6b7280;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    color: #003366;
+    font-weight: 500;
+}
+
+.doctor-actions {
+    padding: 15px 20px;
+    border-top: 1px solid #f3f4f6;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+    background: #003366;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #002244;
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background: #FFA500;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #CC8400;
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #003366;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.qr-placeholder {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    background: #f3f4f6;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: #FFA500;
+}
+
+.url-box {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 8px;
+    word-break: break-all;
+    font-size: 13px;
+    margin: 20px 0;
+    border: 2px solid #e5e7eb;
+}
+
+/* Perfiles de Doctores */
+.perfil-body {
+    background: linear-gradient(135deg, #003366 0%, #004488 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.perfil-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.perfil-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.perfil-header {
+    background: linear-gradient(135deg, #003366, #004488);
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+}
+
+.perfil-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.perfil-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.perfil-specialty {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.perfil-registration {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 8px;
+}
+
+.perfil-content {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #003366;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.description {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 12px;
+    line-height: 1.6;
+    color: #1f2937;
+}
+
+.contact-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+}
+
+.btn-phone {
+    background: #003366;
+}
+
+.btn-email {
+    background: #FFA500;
+}
+
+.info-item {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.schedule {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 12px;
+    line-height: 1.8;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.social-btn:hover {
+    transform: scale(1.05);
+}
+
+.social-facebook {
+    background: #003366;
+}
+
+.social-instagram {
+    background: linear-gradient(45deg, #FFA500, #CC8400);
+}
+
+.map {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #003366, #004488);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    background: #f3f4f6;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-text {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.footer img {
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #FFA500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255,165,0,0.5);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsivo Mejorado */
+@media (max-width: 1024px) {
+    .stats {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .doctors-grid, .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .perfil-body {
+        padding: 10px;
+    }
+
+    .perfil-content {
+        padding: 20px;
+    }
+
+    .social-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .stat-number {
+        font-size: 30px;
+    }
+
+    .qr-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+}

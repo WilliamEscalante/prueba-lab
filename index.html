@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Labclinics S.R.L.</title>
+    <link rel="stylesheet" href="assets/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-header">
+        <span><i class="fas fa-lock"></i> PANEL ADMINISTRATIVO - Solo para uso interno</span>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <img src="assets/logo-labclinics.png" alt="Labclinics S.R.L." class="logo" style="width: 300px; height: auto;">
+        </div>
+
+        <div class="stats" id="statsContainer">
+            <!-- Stats generados dinámicamente por JS -->
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Buscar doctor...">
+        </div>
+
+        <div class="notifications" id="notifications">
+            <!-- Notificaciones dinámicas -->
+        </div>
+
+        <div class="doctors-grid" id="doctorsGrid">
+            <!-- Tarjetas de doctores generadas por JS -->
+        </div>
+    </div>
+
+    <!-- Modal QR -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <h2 id="modalDoctorName"></h2>
+            <div class="qr-placeholder"><i class="fas fa-qrcode"></i></div>
+            <p>Genera el QR con esta URL:</p>
+            <div class="url-box" id="doctorURL"></div>
+            <button class="btn btn-primary" onclick="copyURL()"><i class="fas fa-copy"></i> Copiar URL</button>
+            <button class="btn btn-success close-btn" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal para agregar médico -->
+    <div class="modal" id="addDoctorModal" style="display: none;">
+        <div class="modal-content">
+            <h2>Agregar Nuevo Médico</h2>
+            <form id="addDoctorForm">
+                <div style="margin-bottom: 15px;">
+                    <label for="doctorName">Nombre:</label>
+                    <input type="text" id="doctorName" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="doctorSpecialty">Especialidad:</label>
+                    <input type="text" id="doctorSpecialty" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="doctorRegistration">Colegiatura:</label>
+                    <input type="text" id="doctorRegistration" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="doctorPhone">Teléfono:</label>
+                    <input type="text" id="doctorPhone" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="doctorCity">Ciudad:</label>
+                    <input type="text" id="doctorCity" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-success close-btn" onclick="closeAddModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/admin-script.js"></script>
+    <script>
+        function addDoctorForm() {
+            document.getElementById('addDoctorModal').style.display = 'flex';
+        }
+
+        function closeAddModal() {
+            document.getElementById('addDoctorModal').style.display = 'none';
+        }
+
+        document.getElementById('addDoctorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newDoctor = {
+                id: doctors.length + 1,
+                slug: (document.getElementById('doctorName').value.toLowerCase().replace(/ /g, '-')),
+                name: document.getElementById('doctorName').value,
+                specialty: document.getElementById('doctorSpecialty').value,
+                registration: document.getElementById('doctorRegistration').value,
+                phone: document.getElementById('doctorPhone').value,
+                city: document.getElementById('doctorCity').value
+            };
+            doctors.push(newDoctor);
+            renderStats();
+            renderDoctors(doctors);
+            closeAddModal();
+            alert('Médico agregado con éxito!');
+            showNotification('Nuevo médico agregado: ' + newDoctor.name);
+        });
+
+        // Notificación
+        function showNotification(message) {
+            const notifications = document.getElementById('notifications');
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.padding = '10px';
+            notification.style.backgroundColor = '#FFA500';
+            notification.style.color = 'white';
+            notification.style.marginBottom = '10px';
+            notification.style.borderRadius = '8px';
+            notifications.appendChild(notification);
+            setTimeout(() => notifications.removeChild(notification), 5000);
+        }
+
+        // Ejemplo de notificación al cargar
+        window.onload = function() {
+            showNotification('Bienvenido al panel de administración. Verifica los médicos activos.');
+        };
+    </script>
+</body>
+</html>
